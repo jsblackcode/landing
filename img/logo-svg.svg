@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="gradMetallic" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="45%" stop-color="#CBD5E1" />
+      <stop offset="70%" stop-color="#64748B" />
+      <stop offset="100%" stop-color="#1E293B" />
+    </linearGradient>
+    <linearGradient id="gradCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00D2FF" />
+      <stop offset="100%" stop-color="#0070F3" />
+    </linearGradient>
+    <filter id="cyanGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Fondo base oscuro sutil -->
+  <rect width="200" height="200" rx="36" fill="#0A0E17" />
+  <rect width="200" height="200" rx="36" fill="none" stroke="rgba(0, 210, 255, 0.25)" stroke-width="2" />
+
+  <!-- Llaves y Acentos de Código { / } -->
+  <g filter="url(#cyanGlow)" opacity="0.95">
+    <!-- Llave izquierda { -->
+    <path d="M 44 65 C 44 82 32 88 32 100 C 32 112 44 118 44 135" fill="none" stroke="url(#gradCyan)" stroke-width="7" stroke-linecap="round" />
+    <!-- Llave derecha } -->
+    <path d="M 156 65 C 156 82 168 88 168 100 C 168 112 156 118 156 135" fill="none" stroke="url(#gradCyan)" stroke-width="7" stroke-linecap="round" />
+    <!-- Slash central / -->
+    <line x1="112" y1="42" x2="88" y2="158" stroke="url(#gradCyan)" stroke-width="5" stroke-linecap="round" opacity="0.6" />
+  </g>
+
+  <!-- Letra J (Estructura Metálica) -->
+  <path d="M 64 52 L 96 52 L 96 122 C 96 136 84 148 70 148 C 56 148 48 138 48 128 L 64 128 C 64 132 66 136 71 136 C 77 136 82 131 82 122 L 82 66 L 64 66 Z" fill="url(#gradMetallic)" />
+
+  <!-- Letra S (Estructura Metálica Interconectada) -->
+  <path d="M 142 68 C 136 56 122 52 108 52 C 96 52 86 58 86 69 C 86 82 102 87 118 92 C 136 98 148 106 148 122 C 148 138 133 148 114 148 C 96 148 83 138 78 124 L 92 118 C 95 128 103 134 114 134 C 124 134 132 128 132 121 C 132 112 120 107 104 102 C 86 96 74 88 74 71 C 74 57 88 46 106 46 C 122 46 134 54 138 64 Z" fill="url(#gradMetallic)" />
+</svg>

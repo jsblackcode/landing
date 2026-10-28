@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Black Code | Soluciones Web & Arquitectura Digital</title>
+  <meta name="description" content="Desarrollo web de alto rendimiento, cotizadores online, landing pages y soluciones digitales modernas.">
+  <!-- Favicon / Ícono de pestaña -->
+  <link rel="icon" type="image/svg+xml" href="img/logo-svg.svg">
+
+  <!-- Título y Metas Principales -->
+  <title>JS Black Code | Soluciones Web & Arquitectura Digital</title>
+  <meta name="title" content="JS Black Code | Soluciones Web & Arquitectura Digital">
+  <meta name="description" content="Desarrollo de landing pages de alta conversión, cotizadores dinámicos, PWA y soluciones serverless en Argentina. Rendimiento extremo y foco comercial.">
+  <meta name="keywords" content="desarrollo web, landing page buenos aires, cotizador online whatsapp, soluciones web argentina, diseño web serverless">
+  <meta name="author" content="JS Black Code">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://jsblackcode.com.ar/">
+
+  <!-- Open Graph / Redes Sociales (Facebook, WhatsApp, LinkedIn) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jsblackcode.com.ar/">
+  <meta property="og:title" content="JS Black Code | Soluciones Web & Arquitectura Digital">
+  <meta property="og:description" content="Diseño web moderno, cotizadores en tiempo real y arquitectura serverless ultra rápida.">
+  <!-- Captura dinámica en tiempo real de tu landing -->
+  <meta property="og:image" content="https://api.microlink.io/?url=https%3A%2F%2Fjsblackcode.com.ar&screenshot=true&meta=false&embed=screenshot.url">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="JS Black Code">
+  <meta property="og:locale" content="es_AR">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://jsblackcode.com.ar/">
+  <meta name="twitter:title" content="JS Black Code | Soluciones Web & Arquitectura Digital">
+  <meta name="twitter:description" content="Landing pages de alta conversión, cotizadores y arquitectura web moderna.">
+  <meta name="twitter:image" content="https://api.microlink.io/?url=https%3A%2F%2Fjsblackcode.com.ar&screenshot=true&meta=false&embed=screenshot.url">
+
+  <!-- Schema.org / JSON-LD (Optimización para Motores Generativos / GEO / Google Rich Results) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "JS Black Code",
+    "alternateName": "JS Black Code Soluciones Web",
+    "url": "https://jsblackcode.com.ar",
+    "logo": "https://jsblackcode.com.ar/favicon.ico",
+    "description": "Estudio de desarrollo de páginas web, cotizadores online para negocios y arquitectura serverless en Buenos Aires, Argentina.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Buenos Aires",
+      "addressCountry": "AR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -34.6037,
+      "longitude": -58.3816
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "09:00",
+      "closes": "19:00"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Servicios de Desarrollo Web",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Landing Pages de Alta Conversión",
+            "description": "Sitios web rápidos para captación de clientes optimizados para Google Ads y Meta Ads."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Cotizadores Web y Calculadores Dinámicos",
+            "description": "Automatización de presupuestos con cálculo en vivo y salida directa a WhatsApp."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Arquitectura Cloud y Configuración de Dominios",
+            "description": "Delegación de DNS, gestión en Cloudflare y certificados SSL sin costos ocultos de servidores."
+          }
+        }
+      ]
+    }
+  }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+  <!-- Capas de Fondo Tecnológico -->
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+  <div class="grid-overlay"></div>
+
+  <!-- Header Flotante -->
+  <header class="header-wrap">
+    <nav class="navbar">
+      <a href="#" class="brand">
+        <span class="brand-bracket">&lt;</span>
+        <span class="brand-text">JS BLACK CODE</span>
+        <span class="brand-bracket">/&gt;</span>
+      </a>
+
+      <div class="nav-menu" id="navMenu">
+        <a href="#soluciones" class="nav-link">Soluciones</a>
+        <a href="#diferenciales" class="nav-link">Ventajas</a>
+        <a href="#cotizador" class="nav-link">Cotizador</a>
+        <a href="#contacto" class="nav-link">Contacto</a>
+      </div>
+
+      <div class="nav-actions">
+        <a href="#cotizador" class="btn-glow-nav">Iniciar Proyecto</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-left">
+        <div class="pill-badge">
+          <span class="pulse-dot"></span>
+          <span>Desarrollo Web & Arquitectura Serverless</span>
+        </div>
+        
+        <h1 class="hero-title">
+          Construimos experiencias web que <span class="gradient-text">transforman visitas</span> en clientes.
+        </h1>
+        
+        <p class="hero-subtitle">
+          Dejá atrás los sitios lentos y las plantillas genéricas. Desarrollamos landing pages de alto impacto, cotizadores interactivos y sistemas web optimizados para conversión instantánea.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#cotizador" class="btn-primary">
+            <span>Cotizar mi proyecto</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#soluciones" class="btn-glass">Explorar Soluciones</a>
+        </div>
+
+        <div class="hero-metrics">
+          <div class="metric">
+            <span class="metric-val">100/100</span>
+            <span class="metric-lbl">Core Web Vitals</span>
+          </div>
+          <div class="metric-separator"></div>
+          <div class="metric">
+            <span class="metric-val">&lt; 0.8s</span>
+            <span class="metric-lbl">Tiempo de Carga</span>
+          </div>
+          <div class="metric-separator"></div>
+          <div class="metric">
+            <span class="metric-val">0</span>
+            <span class="metric-lbl">Costos Ocultos</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual: Mockup de Consola/Código -->
+      <div class="hero-right">
+        <div class="tech-window">
+          <div class="window-header">
+            <div class="window-dots">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <div class="window-title">deploy-stack.config.ts</div>
+            <div class="window-status"><span class="status-live"></span>ONLINE</div>
+          </div>
+          <div class="code-body">
+            <pre><code><span class="token-kw">import</span> { Performance, Conversion } <span class="token-kw">from</span> <span class="token-str">'@jsblackcode/core'</span>;
+
+<span class="token-kw">export const</span> clientProject = {
+  brand: <span class="token-str">'Tu Empresa'</span>,
+  architecture: <span class="token-str">'Serverless Edge + PWA'</span>,
+  seoOptimized: <span class="token-bool">true</span>,
+  whatsappIntegrated: <span class="token-bool">true</span>,
+  
+  <span class="token-fn">deliverables</span>: [
+    <span class="token-str">'Diseño a medida & Modo Oscuro'</span>,
+    <span class="token-str">'Cotizador interactivo en tiempo real'</span>,
+    <span class="token-str">'Cero mantenimiento innecesario'</span>
+  ],
+
+  status: <span class="token-str">'Listo para producción 🚀'</span>
+};</code></pre>
+            <div class="terminal-output">
+              <span class="term-arrow">&gt;</span> Edge distribution ready across 300+ PoPs...
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Soluciones / Bento Grid -->
+    <section class="section" id="soluciones">
+      <div class="section-header">
+        <span class="section-tag">SERVICIOS DE ALTO VALOR</span>
+        <h2 class="section-title">Ecosistemas digitales que traccionan ventas</h2>
+        <p class="section-desc">Estructuramos cada proyecto para que sea una herramienta comercial directa, no un folleto estático abandonado.</p>
+      </div>
+
+      <div class="bento-grid">
+        <div class="bento-card bento-wide">
+          <div class="bento-icon">⚡</div>
+          <h3>Landing Pages de Alta Conversión</h3>
+          <p>Estructuradas para anuncios (Google/Meta Ads) y posicionamiento orgánico. Carga inmediata, diseño UI/UX responsivo y llamadas a la acción pensadas para la venta.</p>
+          <ul class="card-features">
+            <li>Optimización SEO técnica desde el código</li>
+            <li>Certificados SSL y seguridad perimetral</li>
+            <li>Adaptabilidad 100% Mobile First</li>
+          </ul>
+        </div>
+
+        <div class="bento-card">
+          <div class="bento-icon">🧮</div>
+          <h3>Cotizadores y Calculadores Web</h3>
+          <p>Automatizá la preventa. Tus clientes eligen sus servicios, calculan el costo en tiempo real y te mandan el pedido listo a WhatsApp.</p>
+          <ul class="card-features">
+            <li>Sin fricción para el usuario</li>
+            <li>Mensaje preformateado directo al chat</li>
+          </ul>
+        </div>
+
+        <div class="bento-card">
+          <div class="bento-icon">📲</div>
+          <h3>Catálogos Web & PWAs</h3>
+          <p>Muestrarios interactivos que se instalan como app sin ocupar memoria ni depender de las tiendas oficiales.</p>
+          <ul class="card-features">
+            <li>Acceso rápido y sin logins engorrosos</li>
+            <li>Actualización instantánea de stock/precios</li>
+          </ul>
+        </div>
+
+        <div class="bento-card bento-wide">
+          <div class="bento-icon">🛡️</div>
+          <h3>Despliegue Cloud & Dominio Propio</h3>
+          <p>Configuración integral de tu marca: delegación de DNS en NIC Argentina, configuración en Cloudflare, correos corporativos y hosting global.</p>
+          <ul class="card-features">
+            <li>Dominio .com.ar vinculado profesionalmente</li>
+            <li>Protección DDoS y caché perimetral global</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ventajas / Diferenciales -->
+    <section class="section" id="diferenciales">
+      <div class="section-header">
+        <span class="section-tag">DIFERENCIAL TÉCNICO</span>
+        <h2 class="section-title">¿Por qué elegir JS Black Code?</h2>
+      </div>
+
+      <div class="grid-features">
+        <div class="feature-item">
+          <span class="feature-bullet">✓</span>
+          <div>
+            <h4>Cero Mantenimiento Innecesario</h4>
+            <p>Arquitectura serverless estable y segura sin bases de datos vulnerables expuestas.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <span class="feature-bullet">✓</span>
+          <div>
+            <h4>Integración Directa con WhatsApp</h4>
+            <p>El cliente consulta o cotiza y los datos llegan listos para cerrar la venta en tu celular.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <span class="feature-bullet">✓</span>
+          <div>
+            <h4>Carga Inmediata y SEO Limpio</h4>
+            <p>Estructuras limpias pensadas para posicionar alto en Google desde el primer día.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cotizador Interactivo Híbrido -->
+    <section class="section" id="cotizador">
+      <div class="section-header">
+        <span class="section-tag">CALCULADORA DE PROYECTO</span>
+        <h2 class="section-title">Proyectá tu desarrollo en minutos</h2>
+        <p class="section-desc">Seleccioná la base que mejor se adapta a tu negocio y sumale módulos adicionales a medida.</p>
+      </div>
+
+      <div class="calculator-card">
+        <div class="calc-options">
+          <div class="calc-group-title">1. Seleccioná el tipo de desarrollo base:</div>
+          
+          <label class="calc-check-card">
+            <input type="radio" name="baseProject" value="Landing Page Comercial" checked>
+            <div class="check-info">
+              <strong>Landing Page de Alta Conversión</strong>
+              <span>Sitio web de 1 página enfocado en captación, mobile-first con dominio y SSL.</span>
+            </div>
+          </label>
+
+          <label class="calc-check-card">
+            <input type="radio" name="baseProject" value="Cotizador Web / Generador PDF">
+            <div class="check-info">
+              <strong>Cotizador Web & Presupuestador Dinámico</strong>
+              <span>Herramienta interactiva con tu marca, cálculo en vivo y salida a WhatsApp/PDF.</span>
+            </div>
+          </label>
+
+          <label class="calc-check-card">
+            <input type="radio" name="baseProject" value="Catálogo Digital / PWA">
+            <div class="check-info">
+              <strong>Catálogo Digital / App Web Progresiva (PWA)</strong>
+              <span>Muestrario de productos o servicios instalable en celulares con carrito ágil.</span>
+            </div>
+          </label>
+
+          <div class="calc-group-title" style="margin-top: 1rem;">2. Módulos adicionales (opcionales):</div>
+
+          <label class="calc-check-card">
+            <input type="checkbox" id="addDominioEmail">
+            <div class="check-info">
+              <strong>Gestión de Dominio .com.ar + Correo Corporativo</strong>
+              <span>Configuración DNS en Cloudflare y reenvío de correo profesional sin costo mensual.</span>
+            </div>
+          </label>
+
+          <label class="calc-check-card">
+            <input type="checkbox" id="addQrPdf">
+            <div class="check-info">
+              <strong>QR Dinámico + Tarjeta Digital / Bio Link</strong>
+              <span>Página de enlaces optimizada para Instagram o mostrador comercial físico.</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="calc-summary">
+          <div class="summary-box">
+            <span class="summary-badge">ALCANCE DEL PROYECTO</span>
+            <h4>Listo para coordinar</h4>
+            <p>Trato directo con el desarrollador, sin intermediarios ni costos mensuales inflados.</p>
+
+            <div class="lead-field-group">
+              <label for="leadName" class="lead-label">
+                <span class="label-prefix">&gt;</span> ¿Con quién tenemos el gusto? <span class="label-hint">(opcional)</span>
+              </label>
+              <div class="lead-input-box">
+                <span class="input-icon">👤</span>
+                <input type="text" id="leadName" placeholder="Escribí tu nombre..." autocomplete="off">
+              </div>
+            </div>
+
+            <button id="btnWhatsappQuote" class="btn-whatsapp">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+              <span>Consultar propuesta por WhatsApp</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Profesional -->
+  <footer class="footer" id="contacto">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-brand-header">
+          <img src="img/logo.jpg" alt="JS Black Code" class="footer-embedded-logo">
+          <span class="brand-code">{JS}</span> Black Code
+        </div>
+        <p class="footer-tagline">Ingeniería Web, Serverless & Soluciones Digitales.</p>
+        <span class="brand-badge-nic">Marca Registrada & Dominio jsblackcode.com.ar</span>
+      </div>
+
+      <div class="footer-links">
+        <div class="link-col">
+          <strong>Navegación</strong>
+          <a href="#soluciones">Soluciones</a>
+          <a href="#diferenciales">Ventajas</a>
+          <a href="#cotizador">Calculadora</a>
+        </div>
+        <div class="link-col">
+          <strong>Contacto</strong>
+          <a href="mailto:contacto@jsblackcode.com.ar">contacto@jsblackcode.com.ar</a>
+          <span class="support-status"></span>
+          <a href="https://wa.me/5491154110663" target="_blank" rel="noopener noreferrer">Atención directa vía WhatsApp</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> JS Black Code. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="./js/scripts.js"></script>
+</body>
+</html>

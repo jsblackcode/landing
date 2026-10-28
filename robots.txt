@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Rastreadores de Modelos de Inteligencia Artificial (GEO)
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
