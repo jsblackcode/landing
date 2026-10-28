@@ -889,6 +889,115 @@ body {
     box-sizing: border-box !important;
   }
 
+  @media (max-width: 768px) {
+  /* Evitar cualquier scroll horizontal indeseado en la página */
+  html, body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+  }
+
+  /* 1. Ajuste del H1 para que 'en clientes.' entre completo */
+  h1,
+  .hero-title,
+  .hero h1 {
+    font-size: 1.62rem !important;
+    line-height: 1.2 !important;
+    word-break: normal !important;
+    padding: 0 0.5rem !important;
+  }
+
+  /* 2. Botones de acción del hero en columna */
+  .hero-actions,
+  .hero-btns {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 0.6rem !important;
+    padding: 0 0.5rem !important;
+  }
+
+  .hero-actions a,
+  .hero-actions button {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+
+  /* 3. Alinear las 3 métricas en una sola fila compacta y prolija */
+  .hero-stats,
+  .stats-strip,
+  .hero-metrics,
+  .metrics-wrap {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-around !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 1.5rem 0 !important;
+    padding: 0 0.25rem !important;
+    box-sizing: border-box !important;
+  }
+
+  .stat-item,
+  .metric-item {
+    flex: 1 !important;
+    text-align: center !important;
+    padding: 0 0.2rem !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
+  }
+
+  .stat-item:last-child,
+  .metric-item:last-child {
+    border-right: none !important;
+  }
+
+  .stat-num,
+  .metric-value {
+    font-size: 1.05rem !important;
+    white-space: nowrap !important;
+  }
+
+  .stat-label,
+  .metric-label {
+    font-size: 0.58rem !important;
+    letter-spacing: 0.2px !important;
+    line-height: 1.15 !important;
+  }
+
+  /* 4. Ajuste de la ventana de código interactivo */
+  .code-window,
+  .code-preview,
+  .hero-code,
+  .terminal-box {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+    padding: 1rem 0.75rem !important;
+    border-radius: 12px !important;
+  }
+
+  .code-window pre,
+  .code-preview code,
+  .code-content {
+    font-size: 0.70rem !important;
+    line-height: 1.45 !important;
+    white-space: pre-wrap !important; /* Permite que el código quiebre línea si es largo */
+    word-break: break-all !important;
+  }
+
+  /* Barra de PoPs inferior */
+  .code-window-footer,
+  .terminal-status,
+  .pops-bar {
+    font-size: 0.65rem !important;
+    white-space: normal !important;
+    line-height: 1.3 !important;
+    text-align: center !important;
+  }
+}
+
   .navbar {
     width: 100% !important;
     max-width: 100% !important;
