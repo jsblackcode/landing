@@ -1,3 +1,8 @@
+/* ========================================================
+   JS BLACK CODE — CORE STYLES & ARCHITECTURE
+   Refactorizado, Modular & 100% Mobile First Ready
+   ======================================================== */
+
 /* --- Variables y Paleta Central --- */
 :root {
   --bg-deep: #06080d;
@@ -5,23 +10,24 @@
   --bg-surface-elevated: #151b27;
   --border-subtle: rgba(255, 255, 255, 0.08);
   --border-focus: rgba(0, 210, 255, 0.4);
-  
+
   --primary: #0070f3;
   --primary-glow: rgba(0, 112, 243, 0.35);
   --cyan: #00d2ff;
   --cyan-glow: rgba(0, 210, 255, 0.2);
-  
+
   --text-pure: #ffffff;
   --text-primary: #e2e8f0;
   --text-muted: #94a3b8;
   --text-faint: #64748b;
-  
+
   --font-title: 'Space Grotesk', sans-serif;
   --font-sans: 'Plus Jakarta Sans', sans-serif;
   --font-mono: 'Fira Code', monospace;
 }
 
-* {
+/* --- Reseteo Defensivo --- */
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -29,6 +35,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -38,9 +45,10 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   position: relative;
+  width: 100%;
 }
 
-/* --- Fondos de Ambiente --- */
+/* --- Fondos de Ambiente Tecnológico --- */
 .grid-overlay {
   position: fixed;
   top: 0;
@@ -78,12 +86,12 @@ body {
   background: radial-gradient(circle, var(--cyan) 0%, transparent 70%);
 }
 
-/* --- Header / Navbar --- */
+/* --- Header / Navbar Flotante --- */
 .header-wrap {
   position: sticky;
-  top: 1.5rem;
+  top: 1rem;
   z-index: 100;
-  padding: 0 1.5rem;
+  padding: 0 1rem;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -92,13 +100,14 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.85rem 1.75rem;
-  background: rgba(14, 18, 27, 0.7);
+  padding: 0.75rem 1.5rem;
+  background: rgba(14, 18, 27, 0.75);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--border-subtle);
   border-radius: 999px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  gap: 1rem;
 }
 
 .brand {
@@ -107,15 +116,20 @@ body {
   font-weight: 700;
   color: var(--text-pure);
   text-decoration: none;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
-  letter-spacing: 0.5px;
+  gap: 0.4rem;
+  white-space: nowrap;
 }
 
 .brand-bracket {
   color: var(--cyan);
   font-family: var(--font-mono);
+}
+
+.brand-text {
+  font-family: var(--font-title);
+  letter-spacing: 0.5px;
 }
 
 .nav-menu {
@@ -135,6 +149,12 @@ body {
   color: var(--text-pure);
 }
 
+.nav-actions {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
 .btn-glow-nav {
   background: linear-gradient(135deg, rgba(0, 112, 243, 0.2), rgba(0, 210, 255, 0.2));
   border: 1px solid rgba(0, 210, 255, 0.4);
@@ -144,6 +164,7 @@ body {
   border-radius: 999px;
   font-size: 0.85rem;
   font-weight: 600;
+  white-space: nowrap;
   transition: all 0.3s ease;
 }
 
@@ -157,12 +178,21 @@ body {
   position: relative;
   z-index: 1;
   max-width: 1200px;
-  margin: 4rem auto 6rem;
+  margin: 3.5rem auto 5rem;
   padding: 0 1.5rem;
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   gap: 3rem;
   align-items: center;
+}
+
+.hero-left {
+  min-width: 0;
+}
+
+.hero-right {
+  min-width: 0;
+  width: 100%;
 }
 
 .pill-badge {
@@ -186,6 +216,7 @@ body {
   background-color: var(--cyan);
   box-shadow: 0 0 8px var(--cyan);
   animation: pulse 2s infinite;
+  flex-shrink: 0;
 }
 
 @keyframes pulse {
@@ -206,12 +237,12 @@ body {
 .gradient-text {
   background: linear-gradient(135deg, #fff 20%, var(--cyan) 100%);
   -webkit-background-clip: text;
-  background-clip: text; /* Corrección para linter */
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .hero-subtitle {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: var(--text-muted);
   line-height: 1.7;
   margin-bottom: 2.25rem;
@@ -222,11 +253,13 @@ body {
   display: flex;
   gap: 1rem;
   margin-bottom: 3rem;
+  flex-wrap: wrap;
 }
 
 .btn-primary {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.6rem;
   background: var(--primary);
   color: #fff;
@@ -244,6 +277,9 @@ body {
 }
 
 .btn-glass {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid var(--border-subtle);
   color: var(--text-primary);
@@ -259,12 +295,18 @@ body {
   border-color: rgba(255, 255, 255, 0.2);
 }
 
+/* Métricas del Hero */
 .hero-metrics {
   display: flex;
   align-items: center;
   gap: 1.5rem;
   padding-top: 2rem;
   border-top: 1px solid var(--border-subtle);
+  width: 100%;
+}
+
+.metric {
+  min-width: 0;
 }
 
 .metric-val {
@@ -286,6 +328,7 @@ body {
   width: 1px;
   height: 30px;
   background: var(--border-subtle);
+  flex-shrink: 0;
 }
 
 /* Mockup de Terminal / IDE */
@@ -297,6 +340,8 @@ body {
   overflow: hidden;
   font-family: var(--font-mono);
   font-size: 0.82rem;
+  width: 100%;
+  max-width: 100%;
 }
 
 .window-header {
@@ -306,11 +351,13 @@ body {
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid var(--border-subtle);
+  gap: 0.5rem;
 }
 
 .window-dots {
   display: flex;
   gap: 6px;
+  flex-shrink: 0;
 }
 
 .dot {
@@ -325,6 +372,9 @@ body {
 .window-title {
   color: var(--text-muted);
   font-size: 0.75rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .window-status {
@@ -333,6 +383,7 @@ body {
   gap: 5px;
   color: #27c93f;
   font-size: 0.7rem;
+  flex-shrink: 0;
 }
 
 .status-live {
@@ -347,6 +398,15 @@ body {
   line-height: 1.7;
 }
 
+.code-body pre {
+  margin: 0;
+  overflow-x: auto;
+}
+
+.code-body code {
+  font-family: var(--font-mono);
+}
+
 .token-kw { color: #ff7b72; }
 .token-str { color: #a5d6ff; }
 .token-fn { color: #d2a8ff; }
@@ -359,6 +419,7 @@ body {
   border-radius: 8px;
   color: var(--text-muted);
   border-left: 2px solid var(--cyan);
+  font-size: 0.75rem;
 }
 
 .term-arrow {
@@ -552,6 +613,7 @@ body {
   width: 18px;
   height: 18px;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .calc-check-card:has(input:checked) {
@@ -620,7 +682,71 @@ body {
   box-shadow: 0 4px 20px rgba(37, 211, 102, 0.35);
 }
 
-/* --- Footer --- */
+/* --- Input de Lead Tech --- */
+.lead-field-group {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.lead-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.3px;
+}
+
+.label-prefix {
+  color: var(--cyan);
+  font-weight: bold;
+  margin-right: 4px;
+}
+
+.label-hint {
+  color: var(--text-faint);
+  font-size: 0.75rem;
+}
+
+.lead-input-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: rgba(6, 8, 13, 0.9);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  transition: all 0.25s ease;
+  overflow: hidden;
+}
+
+.input-icon {
+  padding-left: 1rem;
+  font-size: 0.95rem;
+  opacity: 0.7;
+}
+
+.lead-input-box input {
+  width: 100%;
+  background: transparent !important;
+  border: none !important;
+  padding: 0.85rem 1rem 0.85rem 0.65rem;
+  color: var(--text-pure) !important;
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  outline: none;
+}
+
+.lead-input-box input::placeholder {
+  color: var(--text-faint);
+}
+
+.lead-input-box:focus-within {
+  border-color: var(--cyan);
+  box-shadow: 0 0 15px var(--cyan-glow);
+  background: rgba(14, 18, 27, 0.95);
+}
+
+/* --- Footer & Marca Embebida --- */
 .footer {
   border-top: 1px solid var(--border-subtle);
   background: #040508;
@@ -642,6 +768,32 @@ body {
   font-family: var(--font-title);
   font-size: 1.25rem;
   color: var(--text-pure);
+}
+
+.footer-brand-header {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 0.6rem;
+}
+
+.footer-embedded-logo {
+  width: 42px;
+  height: 42px;
+  object-fit: cover;
+  display: block;
+  flex-shrink: 0;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 210, 255, 0.3);
+  mix-blend-mode: screen;
+  -webkit-mask-image: radial-gradient(circle at center, black 60%, transparent 98%);
+  mask-image: radial-gradient(circle at center, black 60%, transparent 98%);
+  filter: contrast(1.1) brightness(1.05);
+}
+
+.brand-code {
+  color: var(--cyan);
+  font-family: var(--font-mono);
 }
 
 .footer-tagline {
@@ -707,449 +859,277 @@ body {
   color: var(--text-faint);
 }
 
-/* --- Input de Lead Estilo Tech --- */
-.lead-field-group {
-  margin-bottom: 1.5rem;
-  text-align: left;
-}
-
-.lead-label {
-  display: block;
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
-  color: var(--text-muted);
-  margin-bottom: 0.6rem;
-  letter-spacing: 0.3px;
-}
-
-.label-prefix {
-  color: var(--cyan);
-  font-weight: bold;
-  margin-right: 4px;
-}
-
-.label-hint {
-  color: var(--text-faint);
-  font-size: 0.75rem;
-}
-
-.lead-input-box {
-  position: relative;
-  display: flex;
-  align-items: center;
-  background: rgba(6, 8, 13, 0.9);
-  border: 1px solid var(--border-subtle);
-  border-radius: 10px;
-  transition: all 0.25s ease;
-  overflow: hidden;
-}
-
-.input-icon {
-  padding-left: 1rem;
-  font-size: 0.95rem;
-  opacity: 0.7;
-}
-
-.lead-input-box input {
-  width: 100%;
-  background: transparent !important;
-  border: none !important;
-  padding: 0.85rem 1rem 0.85rem 0.65rem;
-  color: var(--text-pure) !important;
-  font-family: var(--font-sans);
-  font-size: 0.92rem;
-  outline: none;
-}
-
-.lead-input-box input::placeholder {
-  color: var(--text-faint);
-}
-
-/* Efecto al hacer foco (glow tecnológico) */
-.lead-input-box:focus-within {
-  border-color: var(--cyan);
-  box-shadow: 0 0 15px var(--cyan-glow);
-  background: rgba(14, 18, 27, 0.95);
-}
-
-/* --- Adaptabilidad Responsive --- */
-@media (max-width: 900px) {
+/* ========================================================
+   RESPONSIVE DESIGN (Tablets y Laptops Intermedias <= 960px)
+   ======================================================== */
+@media (max-width: 960px) {
   .hero {
     grid-template-columns: 1fr;
     text-align: center;
     margin-top: 2rem;
+    gap: 2.5rem;
   }
+
   .hero-subtitle {
     margin-left: auto;
     margin-right: auto;
   }
+
   .hero-cta-group {
     justify-content: center;
   }
+
   .hero-metrics {
     justify-content: center;
   }
+
   .bento-grid {
     grid-template-columns: 1fr;
   }
+
   .bento-wide {
     grid-column: span 1;
   }
+
   .calculator-card {
     grid-template-columns: 1fr;
   }
+
   .footer-inner {
     flex-direction: column;
+    gap: 2rem;
   }
+
   .nav-menu {
     display: none;
   }
 }
 
-/* Bloqueo estricto del tamaño del logo en el navbar */
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  text-decoration: none;
-}  
-
-/* --- Estilos para el Logo e Isotipo --- */
-.brand-img {
-  width: 34px !important;
-  height: 34px !important;
-  min-width: 34px !important;
-  max-width: 34px !important;
-  object-fit: cover !important;
-  border-radius: 8px !important; /* Recorta las puntas blancas exteriores */
-  display: inline-block !important;
-  border: 1px solid rgba(0, 210, 255, 0.3);
-}
-
-/* Cabecera del Brand en Footer */
-.footer-brand-header {
-  display: flex;
-  align-items: center;
-  gap: 0.85rem;
-  margin-bottom: 0.6rem;
-}
-
-.footer-embedded-logo {
-  width: 40px !important;
-  height: 40px !important;
-  min-width: 40px !important;
-  max-width: 40px !important;
-  object-fit: cover !important;
-  border-radius: 8px !important;
-  display: inline-block !important;
-  border: 1px solid rgba(0, 210, 255, 0.3);
-
-  /* Modo de fusión: los negros se vuelven 100% transparentes */
-  mix-blend-mode: screen;
-
-  /* Máscara radial: desvanece suavemente los bordes para eliminar cualquier vértice duro */
-  -webkit-mask-image: radial-gradient(circle at center, black 55%, transparent 95%);
-  mask-image: radial-gradient(circle at center, black 55%, transparent 95%);
-
-  /* Ajuste de brillo sutil para resaltar el cian y el metal */
-  filter: contrast(1.1) brightness(1.05);
-}
-
-.brand-text {
-  font-family: var(--font-title);
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: var(--text-pure);
-  letter-spacing: 0.5px;
-}
-
-.brand-img-sm {
-  width: 28px;
-  height: 28px;
-  object-fit: contain;
-  border-radius: 6px;
-}
-
-.footer-brand-header {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-}
-
 /* ========================================================
-   CORRECCIÓN DEFINITIVA MOBILE (Smartphones <= 768px)
+   RESPONSIVE DEFINITIVO SMARTPHONES (<= 768px)
    ======================================================== */
 @media (max-width: 768px) {
-  /* 1. Header & Barra de navegación flotante */
-  header,
-  .navbar-container,
-  .nav-wrapper {
-    width: 100% !important;
-    padding: 0.5rem 0.75rem !important;
-    box-sizing: border-box !important;
+  /* 1. Header & Barra Flotante Compacta */
+  .header-wrap {
+    top: 0.75rem;
+    padding: 0 0.75rem;
   }
-
-  @media (max-width: 768px) {
-  /* Evitar cualquier scroll horizontal indeseado en la página */
-  html, body {
-    overflow-x: hidden !important;
-    width: 100% !important;
-  }
-
-  /* 1. Ajuste del H1 para que 'en clientes.' entre completo */
-  h1,
-  .hero-title,
-  .hero h1 {
-    font-size: 1.62rem !important;
-    line-height: 1.2 !important;
-    word-break: normal !important;
-    padding: 0 0.5rem !important;
-  }
-
-  /* 2. Botones de acción del hero en columna */
-  .hero-actions,
-  .hero-btns {
-    display: flex !important;
-    flex-direction: column !important;
-    width: 100% !important;
-    gap: 0.6rem !important;
-    padding: 0 0.5rem !important;
-  }
-
-  .hero-actions a,
-  .hero-actions button {
-    width: 100% !important;
-    text-align: center !important;
-    justify-content: center !important;
-  }
-
-  /* 3. Alinear las 3 métricas en una sola fila compacta y prolija */
-  .hero-stats,
-  .stats-strip,
-  .hero-metrics,
-  .metrics-wrap {
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: space-around !important;
-    align-items: center !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 1.5rem 0 !important;
-    padding: 0 0.25rem !important;
-    box-sizing: border-box !important;
-  }
-
-  .stat-item,
-  .metric-item {
-    flex: 1 !important;
-    text-align: center !important;
-    padding: 0 0.2rem !important;
-    border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
-  }
-
-  .stat-item:last-child,
-  .metric-item:last-child {
-    border-right: none !important;
-  }
-
-  .stat-num,
-  .metric-value {
-    font-size: 1.05rem !important;
-    white-space: nowrap !important;
-  }
-
-  .stat-label,
-  .metric-label {
-    font-size: 0.58rem !important;
-    letter-spacing: 0.2px !important;
-    line-height: 1.15 !important;
-  }
-
-  /* 4. Ajuste de la ventana de código interactivo */
-  .code-window,
-  .code-preview,
-  .hero-code,
-  .terminal-box {
-    width: 100% !important;
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-    overflow-x: hidden !important;
-    padding: 1rem 0.75rem !important;
-    border-radius: 12px !important;
-  }
-
-  .code-window pre,
-  .code-preview code,
-  .code-content {
-    font-size: 0.70rem !important;
-    line-height: 1.45 !important;
-    white-space: pre-wrap !important; /* Permite que el código quiebre línea si es largo */
-    word-break: break-all !important;
-  }
-
-  /* Barra de PoPs inferior */
-  .code-window-footer,
-  .terminal-status,
-  .pops-bar {
-    font-size: 0.65rem !important;
-    white-space: normal !important;
-    line-height: 1.3 !important;
-    text-align: center !important;
-  }
-}
 
   .navbar {
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: 0.45rem 0.85rem !important;
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    gap: 0.5rem !important;
+    padding: 0.45rem 0.85rem;
+    gap: 0.5rem;
   }
 
-  /* Evitar quiebre del texto de la marca */
   .brand {
-    display: inline-flex !important;
-    align-items: center !important;
-    white-space: nowrap !important;
-    flex-shrink: 0 !important;
-    font-size: 0.82rem !important;
-    gap: 0.25rem !important;
+    font-size: 0.84rem;
+    gap: 0.25rem;
   }
 
   .brand-text {
-    font-size: 0.82rem !important;
-    white-space: nowrap !important;
-    letter-spacing: 0.3px !important;
+    font-size: 0.84rem;
+    letter-spacing: 0.2px;
   }
 
-  .brand-bracket {
-    font-size: 0.85rem !important;
+  .btn-glow-nav {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.75rem;
   }
 
-  /* Botón de acción compacto */
-  .navbar .btn,
-  .navbar a.btn,
-  .navbar button,
-  .nav-cta {
-    padding: 0.4rem 0.65rem !important;
-    font-size: 0.74rem !important;
-    white-space: nowrap !important;
-    flex-shrink: 0 !important;
-    border-radius: 8px !important;
-  }
-
-  /* Ocultar enlaces de texto del menú si estuvieran visibles */
-  .nav-links,
-  .nav-menu {
-    display: none !important;
-  }
-
-  /* 2. Hero Section & Títulos fluidos */
+  /* 2. Hero Section */
   .hero {
-    padding: 4.5rem 1rem 2rem 1rem !important;
-    overflow-x: hidden !important;
+    margin: 2.5rem auto 3.5rem;
+    padding: 0 1rem;
   }
 
-  .hero-badge {
-    font-size: 0.68rem !important;
-    padding: 0.3rem 0.65rem !important;
-    max-width: 95% !important;
-    white-space: normal !important;
-    text-align: center !important;
-    margin: 0 auto 1.25rem auto !important;
+  .pill-badge {
+    font-size: 0.68rem;
+    padding: 0.3rem 0.7rem;
+    max-width: 100%;
+    margin-bottom: 1.25rem;
+    white-space: normal;
   }
 
-  /* Tipografía fluida para que nunca desborde ni se amontone */
-  h1,
   .hero-title {
-    font-size: clamp(1.65rem, 6.5vw, 2.1rem) !important;
-    line-height: 1.15 !important;
-    margin-bottom: 1rem !important;
-    word-break: break-word !important;
+    font-size: clamp(1.65rem, 6.8vw, 2.15rem);
+    line-height: 1.18;
+    margin-bottom: 1rem;
+    letter-spacing: -0.5px;
+    word-break: normal;
   }
 
-  h2,
+  .hero-subtitle {
+    font-size: 0.9rem;
+    line-height: 1.55;
+    margin-bottom: 1.75rem;
+  }
+
+  /* Botones del Hero en Columna */
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.7rem;
+    margin-bottom: 2.25rem;
+  }
+
+  .hero-cta-group .btn-primary,
+  .hero-cta-group .btn-glass {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  /* 3. Métricas en 3 Columnas Uniformes */
+  .hero-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.35rem;
+    padding-top: 1.5rem;
+    justify-content: stretch;
+  }
+
+  .metric-separator {
+    display: none; /* Oculta los separadores verticales que empujan en mobile */
+  }
+
+  .metric {
+    text-align: center;
+    padding: 0.25rem;
+  }
+
+  .metric-val {
+    font-size: 1.1rem;
+    white-space: nowrap;
+  }
+
+  .metric-lbl {
+    font-size: 0.62rem;
+    letter-spacing: 0;
+    line-height: 1.2;
+    margin-top: 0.2rem;
+  }
+
+  /* 4. Mockup de Consola / IDE */
+  .tech-window {
+    border-radius: 12px;
+  }
+
+  .window-header {
+    padding: 0.6rem 0.8rem;
+  }
+
+  .window-title {
+    font-size: 0.68rem;
+  }
+
+  .window-status {
+    font-size: 0.65rem;
+  }
+
+  .code-body {
+    padding: 0.85rem;
+  }
+
+  .code-body pre {
+    white-space: pre-wrap;
+    word-break: break-word;
+    font-size: 0.7rem;
+    line-height: 1.5;
+  }
+
+  .terminal-output {
+    margin-top: 0.85rem;
+    padding: 0.6rem;
+    font-size: 0.68rem;
+    line-height: 1.35;
+    word-break: break-word;
+  }
+
+  /* 5. Secciones, Títulos y Bento Cards */
+  .section {
+    margin: 4rem auto;
+    padding: 0 1rem;
+  }
+
+  .section-header {
+    margin-bottom: 2.25rem;
+  }
+
+  .section-tag {
+    font-size: 0.7rem;
+  }
+
   .section-title {
-    font-size: clamp(1.5rem, 5.8vw, 1.85rem) !important;
-    line-height: 1.2 !important;
-    margin-bottom: 0.75rem !important;
+    font-size: clamp(1.5rem, 6vw, 1.85rem);
+    line-height: 1.2;
   }
 
-  .section-tag,
-  .section-subtitle {
-    font-size: 0.72rem !important;
-    letter-spacing: 1px !important;
-  }
-
-  p.hero-desc,
-  .hero p,
   .section-desc {
-    font-size: 0.88rem !important;
-    line-height: 1.45 !important;
-    padding: 0 !important;
+    font-size: 0.88rem;
   }
 
-  /* 3. Botones en columna para fácil toque táctil */
-  .hero-actions,
-  .hero-buttons {
-    display: flex !important;
-    flex-direction: column !important;
-    width: 100% !important;
-    gap: 0.65rem !important;
-    margin-top: 1.5rem !important;
+  .bento-card {
+    padding: 1.5rem 1.25rem;
+    border-radius: 14px;
   }
 
-  .hero-actions a,
-  .hero-buttons a {
-    width: 100% !important;
-    box-sizing: border-box !important;
-    text-align: center !important;
-    justify-content: center !important;
-    padding: 0.75rem 1rem !important;
+  .bento-icon {
+    font-size: 1.6rem;
+    margin-bottom: 0.85rem;
   }
 
-  /* 4. Métricas / Core Web Vitals (3 columnas proporcionales) */
-  .metrics,
-  .hero-metrics,
-  .stats-grid {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 0.35rem !important;
-    width: 100% !important;
-    margin-top: 2rem !important;
+  .bento-card h3 {
+    font-size: 1.15rem;
   }
 
-  .metric-item,
-  .stat-card {
-    padding: 0.45rem 0.2rem !important;
-    text-align: center !important;
+  .bento-card p {
+    font-size: 0.88rem;
   }
 
-  .metric-value,
-  .stat-number {
-    font-size: 1.05rem !important;
+  /* 6. Cotizador & Formulario */
+  .calculator-card {
+    padding: 1.5rem 1rem;
+    border-radius: 16px;
+    gap: 1.75rem;
   }
 
-  .metric-label,
-  .stat-label {
-    font-size: 0.62rem !important;
-    line-height: 1.1 !important;
+  .calc-check-card {
+    padding: 0.85rem;
+    gap: 0.75rem;
   }
 
-  /* 5. Contenedor de Servicios y Tarjetas */
-  .services-grid,
-  .cards-grid {
-    grid-template-columns: 1fr !important;
-    gap: 1.25rem !important;
-    padding: 0 !important;
-    width: 100% !important;
+  .check-info strong {
+    font-size: 0.88rem;
   }
 
-  .service-card,
-  .card {
-    padding: 1.5rem 1.15rem !important;
-    border-radius: 14px !important;
+  .check-info span {
+    font-size: 0.76rem;
+  }
+
+  .calc-summary {
+    padding: 1.35rem 1rem;
+  }
+
+  .summary-box h4 {
+    font-size: 1.2rem;
+  }
+
+  .summary-box p {
+    font-size: 0.82rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .btn-whatsapp {
+    font-size: 0.85rem;
+    padding: 0.85rem 1rem;
+  }
+
+  /* 7. Footer */
+  .footer {
+    padding: 3.5rem 1rem 2rem;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 1.5rem;
   }
 }
